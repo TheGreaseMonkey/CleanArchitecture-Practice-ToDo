@@ -1,5 +1,4 @@
-﻿using CAToDo.Core.Models;
-using MediatR;
+﻿using MediatR;
 
 namespace CAToDo.Application.UseCase.ToDoItem.Query
 {
