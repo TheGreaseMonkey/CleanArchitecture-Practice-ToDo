@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using CAToDo.Application.UseCase.ToDoItem.Command;
+using CAToDo.Application.UseCase.ToDoItem.Query;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,9 +22,9 @@ namespace CAToDo.Web.Controllers
 
         // GET: api/<ToDoController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<Core.Models.ToDoItem[]> Get()
         {
-            return new string[] { "value1", "value2" };
+            return await _mediator.Send(new GetAllToDoItemsRequest());
         }
 
         // GET api/<ToDoController>/5

@@ -13,7 +13,7 @@ namespace CAToDo.Infra.EF.DI
     {
         public static IServiceCollection AddInfra(this IServiceCollection services)
         {
-            services.AddTransient<IToDoItemRepository, ToDoItemRepository>();
+            services.AddSingleton<IToDoItemRepository, ToDoItemRepository>();
 
             return services;
         }

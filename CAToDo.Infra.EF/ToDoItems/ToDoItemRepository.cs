@@ -1,6 +1,7 @@
 ﻿using CAToDo.Application.Interface.Data;
 using CAToDo.Core.Models;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CAToDo.Infra.EF.ToDoItems
@@ -8,25 +9,30 @@ namespace CAToDo.Infra.EF.ToDoItems
     public class ToDoItemRepository : IToDoItemRepository
     {
 
-        public static ConcurrentDictionary<string,ToDoItem> Items;
+        public static List<ToDoItem> Items;
 
         public ToDoItemRepository()
         {
-            Items = new ConcurrentDictionary<string, ToDoItem>();
+            Items = new List<ToDoItem>();
         }
 
         public async Task<ToDoItem> CreateNewToDoItem(ToDoItem item)
         {
-            if (Items.ContainsKey(item.Title))
-            {
-                Items[item.Title] = item;
-            }
-            else
-            {
-                Items.TryAdd(item.Title, item);
-            }
+            Items.Add(item);
 
             return item;
+        }
+
+        public async Task<ToDoItem[]> GetAllToDoItems()
+        {
+            List<ToDoItem> items = new List<ToDoItem>();
+
+            foreach (var i in Items)
+            {
+                items.Add(i);
+            }
+
+            return items.ToArray();
         }
     }
 }
