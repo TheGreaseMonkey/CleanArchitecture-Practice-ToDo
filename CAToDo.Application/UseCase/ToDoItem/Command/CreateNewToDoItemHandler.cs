@@ -5,7 +5,7 @@ using CAToDo.Application.Interface.Data;
 
 namespace CAToDo.Application.UseCase.ToDoItem.Command
 {
-    public class CreateNewToDoItemHandler : IRequestHandler<NewToDoItemCommand, CAToDo.Core.Models.ToDoItem>
+    public class CreateNewToDoItemHandler : IRequestHandler<NewToDoItemCommand, Core.Models.ToDoItem>
     {
 
         private IToDoItemRepository _repo = null;

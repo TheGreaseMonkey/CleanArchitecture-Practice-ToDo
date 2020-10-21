@@ -1,10 +1,6 @@
 ﻿using CAToDo.Application.Interface.Data;
 using CAToDo.Core.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CAToDo.Infra.EF.ToDoItems

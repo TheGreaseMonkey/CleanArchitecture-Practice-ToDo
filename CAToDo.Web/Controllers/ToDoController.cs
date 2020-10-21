@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using CAToDo.Application.UseCase.ToDoItem.Command;
 using MediatR;
@@ -39,6 +37,7 @@ namespace CAToDo.Web.Controllers
         [HttpPost]
         public async Task<Core.Models.ToDoItem> Post([FromBody] NewToDoItemCommand item)
         {
+            // Maybe add some validation later
             return await _mediator.Send(item);
         }
 
