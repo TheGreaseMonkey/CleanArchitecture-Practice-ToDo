@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CAToDo.Application.UseCase.ToDoItem.Command;
 using CAToDo.Application.UseCase.ToDoItem.Query;
 using MediatR;
@@ -27,11 +26,11 @@ namespace CAToDo.Web.Controllers
             return await _mediator.Send(new GetAllToDoItemsRequest());
         }
 
-        // GET api/<ToDoController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/<ToDoController>/testy
+        [HttpGet("{name}")]
+        public async Task<Core.Models.ToDoItem> Get(string name)
         {
-            return "value";
+            return await _mediator.Send(new GetOneToDoItemRequest { Title = name });
         }
 
         // POST api/<ToDoController>

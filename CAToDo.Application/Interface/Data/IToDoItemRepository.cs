@@ -6,5 +6,6 @@ namespace CAToDo.Application.Interface.Data
     {
         Task<Core.Models.ToDoItem> CreateNewToDoItem(Core.Models.ToDoItem item);
         Task<Core.Models.ToDoItem[]> GetAllToDoItems();
+        Task<Core.Models.ToDoItem> GetOneToDoItem(string title);
     }
 }
