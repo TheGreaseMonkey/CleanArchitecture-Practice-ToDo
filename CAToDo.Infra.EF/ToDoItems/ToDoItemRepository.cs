@@ -25,14 +25,7 @@ namespace CAToDo.Infra.EF.ToDoItems
 
         public async Task<ToDoItem[]> GetAllToDoItems()
         {
-            List<ToDoItem> items = new List<ToDoItem>();
-
-            foreach (var i in Items)
-            {
-                items.Add(i);
-            }
-
-            return items.ToArray();
+            return Items.ToArray();
         }
 
         public async Task<ToDoItem> GetOneToDoItem(string title)
