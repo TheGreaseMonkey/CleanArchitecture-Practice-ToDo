@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CAToDo.Application\CAToDo.Application.csproj" />
     <ProjectReference Include="..\CAToDo.Infra.EF\CAToDo.Infra.EF.csproj" />
+    <ProjectReference Include="..\CAToDo.Infra.IM\CAToDo.Infra.IM.csproj" />
   </ItemGroup>
 
 </Project>
