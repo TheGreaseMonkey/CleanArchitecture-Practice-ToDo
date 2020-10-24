@@ -22,8 +22,22 @@ namespace CAToDo.Web
         {
             services.AddControllersWithViews();
 
+            /*
+             * This is really important. These 2 services come from the
+             * CAToDo.Application and CAToDo.Infra.IM projects
+             * 
+             * .AddApp() includes MediatR package from Jimmy Bogard, this package
+             * is responsible for CQRS and is needed to send the communication commands.
+             * This inserts the MediatR package using dependency injection
+             */
             services.AddApp();
 
+            /*
+             * This adds the infrastructure to the project using dependency injection.
+             * While it is true that CADToDo.Web itself does not use it, as it should.
+             * The CADToDo.Application project does, since we injected it in the .AddApp()
+             * line, the infra is also injected there
+             */
             services.AddInfra();
         }
 
